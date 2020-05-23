@@ -1,6 +1,6 @@
 $(document).ready(function (){
-  const currentDay = $("#currentDay");
-  const container = $(".constainer");
+  const currentDay = $('#currentDay');
+  const container = $('.container');
 
   //Set the date in body / header / p tag
   currentDay.text(moment().format("[Today is] dddd, MMMM Do YYYY, h:mm a")); 
@@ -11,7 +11,16 @@ $(document).ready(function (){
   }
   // create function to creates a row/input field for user/ save button to save locally
   function createRows (num) {
-      const rows = $(`<div class = "row" id = ${num}>`);
+      const rows = $(`<div class = "row" id = ${num}>`)
+      const hours = $(`<div class = "hour">`);
+      const inputField = $(`<textarea class = "description" id="submit"></textarea>`);
+      const saveBtn = $(`<button class = "saveBtn "><i class = "fas fa-save"></button>`);
+
+      rows.append(hours)
+      rows.append(inputField)
+      rows.append(saveBtn)
+
+      container.append(rows);
   }
 
 });
