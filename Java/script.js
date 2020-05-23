@@ -22,5 +22,17 @@ $(document).ready(function (){
 
       container.append(rows);
   }
+  //create a function to change color of row based on current time, this needs to set class in row somehow
+  function rowColorByHour(time) {
+    const currentHour = moment().hour;
 
+      if (time < currentHour) {
+        return past
+      }else if (time === currentHour) {
+        return present
+      } else if (time > currentHour) {
+       return future
+      }
+  }
+  //create on click event for saveBtn to save to local storage
 });
